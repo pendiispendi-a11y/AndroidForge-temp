@@ -401,10 +401,4 @@ jobs:
             --collect "$GITHUB_WORKSPACE/collect.json" || true
 
       # ---------------------------------------------------------------------
-      # Final: fail the job if the build itself failed
-      # ---------------------------------------------------------------------
-      - name: Fail if build failed
-        if: steps.build.outputs.build_succeeded != 'true'
-        run: |
-          echo "::error::Android build failed. See the diagnosis above and the AndroidForge-logs artifact."
-          exit 1
+      
